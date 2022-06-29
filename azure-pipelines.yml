@@ -21,6 +21,11 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker Registry'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
